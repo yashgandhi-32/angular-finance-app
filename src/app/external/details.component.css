@@ -1,0 +1,28 @@
+.details{
+  margin-left: 30px;
+}
+.headings{
+  color: grey;
+}
+.detail-trans{
+  border: 1px solid #ddd;
+  padding: 72px 0px 12px 12px;
+  border-radius: 4px;
+  position: relative;
+}
+.detail-trans:before{
+  content: "transactions";
+  font-weight: 700;
+  font-size: 14px;
+  color: grey;
+  position: absolute;
+  text-transform: uppercase;
+  top: 24px;
+  left: 24px;
+}
+.detail-trans .label{
+  margin-right: 3px;
+  padding: 1px 6px 1px 6px;
+  font-family: sans-serif;
+  font-variant: normal;
+}

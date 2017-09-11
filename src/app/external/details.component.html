@@ -1,0 +1,60 @@
+<div class="row" *ngIf="_error">
+  <p class="alert alert-danger">{{_error}}</p>
+</div>
+<div [hidden]="!isObject(_accounts | async)" class="details">
+  <div class=" detail-label">
+    <h3 class="headings">Account</h3></div>
+  <div class=" detail-data">
+    <h5>&nbsp;&nbsp;{{(_accounts|async)?.title}}
+      <small *ngIf="_accounts.description">--  {{(_accounts|async)?.description}}</small>
+    </h5>
+  </div>
+  <br>
+  <div class="detail-label">
+    <h3 class="headings">Balance</h3>
+  </div>
+  <div class="detail-data" [ngClass]="{'text-success':_accounts.balance>0}">
+    <h5>&nbsp;&nbsp;{{(_accounts|async)?.balance}} </h5>
+  </div>
+</div>
+<br>
+<div *ngIf="_accounts">
+  <div class="row">
+    <div class="detail-trans">
+      <div *ngIf="_trans.length == 0">
+        <p class="alert alert-info">There is no transaction yet, create a new one !!</p>
+      </div>
+      <div *ngIf="_trans.length>0" class="table-responsive">
+        <form class="form-inline pull-right">
+          <label for="searchtag">Search By Tag  </label>
+          <input type="text" class="form-control" placeholder="tag..." #tag>
+          <button type="button" class="btn btn-default" name="button" (click)="searchtag(tag)">Search</button>
+        </form>
+        <br>
+        <br>
+        <br>
+        <table class="table table-hover">
+          <thead>
+            <tr>
+              <th>#</th>
+              <th>Description</th>
+              <th>Value</th>
+              <th>Date</th>
+              <th>Tags</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let t of (_trans | SearchTransactions:_tagSearchQuery)">
+              <td>{{t.id}}</td>
+              <td>{{t.description}}</td>
+              <td [ngClass]="{'text-success':t.value>0,'text-danger':t.value<0}">{{t.value|currency:'INR':true:'1.2-2'}}</td>
+              <td>{{t.date | date:'d MMM'}}</td>
+              <td><span *ngFor="let tag of t.tags" class="label  label-primary">{{tag}}</span></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <button [routerLink]="['/transactions','create',{account:id}]" type="button" class="btn btn-primary">Add Transactions</button>
+    </div>
+  </div>
+</div>

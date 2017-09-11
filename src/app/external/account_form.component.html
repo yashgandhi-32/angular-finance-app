@@ -1,0 +1,38 @@
+<h3>Add New Account</h3>
+<br><br>
+<form class="form-horizontal" #myForm>
+  <div *ngIf=maxshow>
+    <h4 class="alert alert-danger"><strong>Error! </strong>Max 3 accounts possible</h4>
+  </div>
+  <div class="form-group">
+    <label for="title" class=" col-sm-2">Name:</label>
+    <div class="col-sm-5">
+      <input id="name" type="text" name="" value="" placeholder="name" class="form-control" #name>
+    </div>
+
+  </div>
+  <div class="form-group">
+    <label for="title" class="col-sm-2">Title:  <em>(Bank Name)</em></label>
+    <div class="col-sm-5">
+      <input id="title" type="text" name="" value="" placeholder="title" class="form-control" #title>
+    </div>
+  </div>
+
+  <div class="form-group">
+    <label for="desc" class="col-sm-2">Description:</label>
+    <div class="col-sm-5">
+      <input id="desc" type="text" name="" value="" class="form-control" placeholder="description " #desc>
+    </div>
+  </div>
+
+  <div class="form-group">
+    <label for="desc" class="col-sm-2">Balance:</label>
+    <div class="col-sm-5">
+      <input id="bal" type="text" name="" value="" class="form-control " placeholder="balance" #balance>
+    </div>
+  </div>
+
+  <div>
+    <button class="btn btn-danger" (click)="createAcc(title,$event,desc,balance,name)">Create</button>
+  </div>
+</form>

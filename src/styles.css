@@ -1,0 +1,55 @@
+@import url('https://fonts.googleapis.com/css?family=Roboto+Slab');
+* {
+  font-family: 'Roboto Slab', serif !important;
+}
+
+h1 {
+  color: #369;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 250%;
+}
+
+.emptyAcc h2 {
+  background: #36D1DC;
+  /* fallback for old browsers */
+  background: -webkit-linear-gradient(to right, #5B86E5, #36D1DC);
+  /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(to right, #5B86E5, #36D1DC);
+  /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+  padding: 5px;
+}
+
+.footerr {
+  position: absolute;
+  right: 0px;
+  bottom: 0;
+
+  padding: 1rem;
+  background-color: #efefef;
+  text-align: center;
+}
+.redheart {
+  color: #ff0000;
+  font-size: 22px;
+  font-family: 'arial unicode MS', arial, geneva, sans-serif;
+}
+
+.jumbotron {
+  background: #06beb6;
+  /* fallback for old browsers */
+  background: -webkit-linear-gradient(to right, #48b1bf, #06beb6);
+  /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(to right, #48b1bf, #06beb6);
+  /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+  margin-top: 0;
+  text-align: center;
+}
+
+.jumbotron a {
+  text-decoration: none;
+  color: black;
+}
+
+.selected {
+  background-color: #ffccff !important;
+}
